@@ -14,3 +14,13 @@ Installation:
 ## Links
 1. https://www.npmjs.com/package/excel4node
 2. https://stackoverflow.com/questions/44369082/excel-download-is-not-working-in-mean-stack-app/44373532#44373532
+
+## Example download using angularjs
+```
+$http.get('http://localhost:3000/xls', { responseType: 'arraybuffer' })
+    .success(function (data, status, headers) {
+        window.open(URL.createObjectURL(new Blob([data], { type: headers('Content-Type') })));
+    }).error(function (data, status) {
+    console.log(data);
+});
+```
