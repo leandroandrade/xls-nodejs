@@ -56,6 +56,7 @@ function createXlsFile(req, res) {
         .string('Footer Sheet')
         .style(style);
 
+    res.setHeader("Content-type", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
     wb.write('users-data.xlsx', res);
 }
 
